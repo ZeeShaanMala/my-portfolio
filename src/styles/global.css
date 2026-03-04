@@ -1,0 +1,152 @@
+/* ============================================================
+   global.css  –  CSS variables, resets, and base styles
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&family=Fira+Code:wght@400;500&display=swap');
+
+/* ---------- CSS Variables ---------- */
+:root {
+  --bg:        #0f172a;
+  --bg-alt:    #0a1628;
+  --card:      #1e293b;
+  --border:    rgba(56, 189, 248, 0.15);
+  --primary:   #38bdf8;
+  --primary2:  #0ea5e9;
+  --text:      #e2e8f0;
+  --text-muted:#94a3b8;
+  --text-dim:  #475569;
+  --green:     #34d399;
+  --purple:    #a5b4fc;
+  --font-main:    'Barlow', sans-serif;
+  --font-heading: 'Barlow Condensed', sans-serif;
+  --font-code:    'Fira Code', monospace;
+  --radius:    14px;
+  --radius-lg: 18px;
+  --shadow:    0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: var(--bg); }
+::-webkit-scrollbar-thumb  { background: var(--primary); border-radius: 3px; }
+
+/* ---------- Selection ---------- */
+::selection {
+  background: rgba(56, 189, 248, 0.25);
+  color: var(--text);
+}
+
+/* ---------- Utility ---------- */
+.section {
+  padding: 6rem 2.5rem;
+}
+
+.section-label {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+.section-title .accent {
+  color: var(--primary);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.accent {
+  color: var(--primary);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary2));
+  border: none;
+  color: var(--bg);
+  font-weight: 800;
+  padding: 0.8rem 1.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: var(--font-main);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 32px rgba(56, 189, 248, 0.55);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  font-weight: 700;
+  padding: 0.8rem 1.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: var(--font-main);
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-outline:hover {
+  background: rgba(56, 189, 248, 0.1);
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes orbit {
+  0%   { transform: rotate(0deg)   translateX(140px); }
+  100% { transform: rotate(360deg) translateX(140px); }
+}
+
+
+.animate-fadeup  { animation: fadeUp 0.9s ease forwards; }
+.animate-orbit   { animation: orbit 5s linear infinite; }
+.animate-bounce  { animation: bounce 2s ease-in-out infinite; }
+
+/* ---------- Responsive helpers ---------- */
+@media (max-width: 768px) {
+  .section { padding: 4rem 1.2rem; }
+  .hide-mobile { display: none !important; }
+  .show-mobile { display: flex !important; }
+}

@@ -1,0 +1,132 @@
+/* src/components/Contacts.css */
+
+.Contacts {
+  background: var(--bg-alt);
+}
+
+.Contacts__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* ── Info side ── */
+.Contacts__intro {
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+
+.Contacts__item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: var(--card);
+  border: 1px solid rgba(56, 189, 248, 0.1);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.Contacts__item:hover {
+  border-color: var(--primary);
+  transform: translateX(4px);
+}
+
+.Contacts__item-icon {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.Contacts__item-label {
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.Contacts__item-value {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ── Form side ── */
+.Contacts__form {
+  background: var(--card);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+}
+
+.Contacts__success {
+  background: rgba(52, 211, 153, 0.12);
+  border: 1px solid var(--green);
+  border-radius: 10px;
+  padding: 1rem;
+  color: var(--green);
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.Contacts__field {
+  margin-bottom: 1.4rem;
+}
+
+.Contacts__label {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.Contacts__input {
+  display: block;
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-family: var(--font-main);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.Contacts__input:focus {
+  border-color: rgba(56, 189, 248, 0.6);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
+}
+
+.Contacts__input::placeholder {
+  color: var(--text-dim);
+}
+
+.Contacts__textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.Contacts__submit {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .Contacts__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

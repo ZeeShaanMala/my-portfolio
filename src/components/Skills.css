@@ -1,0 +1,62 @@
+/* src/components/Skills.css */
+
+.skills {
+  background: var(--bg-alt);
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Card base */
+.skills__card {
+  background: var(--card);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  border-radius: var(--radius);
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: default;
+  /* entrance animation */
+  opacity: 0;
+  transform: translateY(30px) scale(0.92);
+  transition:
+    opacity      0.5s ease,
+    transform    0.5s ease,
+    box-shadow   0.2s,
+    border-color 0.2s;
+}
+
+.skills__card--visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.skills__card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 16px 40px rgba(56, 189, 248, 0.18);
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+.skills__icon {
+  font-size: 2rem;
+}
+
+.skills__name {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.skills__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
